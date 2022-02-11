@@ -189,6 +189,9 @@ body {
       text-align: left;
       color: #a5a5a5;
     }
+    .clear{
+      cursor: pointer;
+    }
     .filter-line {
       margin: 20px 0;
       position: absolute;
@@ -208,6 +211,9 @@ body {
       padding: 8px 11px;
       margin-top: 12px;
       position: relative;
+      text-overflow: ellipsis;
+      //overflow: hidden;
+      white-space: nowrap;
       cursor: pointer;
       i {
         color: #a5a5a5;
@@ -240,4 +246,11 @@ body {
       }
     }
   }
+}
+// mobile screen
+@media screen and (max-width: 960px) {
+.filter-container{
+  display: none;
+}
+
 }

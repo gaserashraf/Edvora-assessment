@@ -6,7 +6,8 @@ const ProductItem = (props) => {
     productName,
     brandName,
     price,
-    adress,
+    state,
+    city,
     discription,
     date,
     time,
@@ -19,7 +20,7 @@ const ProductItem = (props) => {
           <div className="img">
             <img src={image}></img>
           </div>
-          <h3 className="text-sec adress">{adress}</h3>
+          <h3 className="text-sec adress">{state+"/"+city}</h3>
         </div>
         <div className="col-6 box2">
           <h3 className="text-sec p-name">{productName}</h3>
@@ -40,7 +41,8 @@ ProductItem.propTypes = {
   productName: PropTypes.string,
   brandName: PropTypes.string,
   price: PropTypes.string,
-  adress: PropTypes.string,
+  state: PropTypes.string,
+  city: PropTypes.string,
   discription: PropTypes.string,
   date: PropTypes.string,
   time: PropTypes.string,

@@ -10,6 +10,7 @@ const Products = () => {
     brands,
     hashMapProducts,
     filterBrand,
+    hashMapProductsFilter,
   } = useContext(ProductContext);
   useEffect(() => {
     getProductsServices();
@@ -22,12 +23,19 @@ const Products = () => {
       <h3>Products</h3>
       {loading ? (
         <Loader />
-      ) : filterBrand ? (
-        <ProductContainer
-          productName={filterBrand}
-          productList={hashMapProducts.get(filterBrand)}
-          loading={loading}
-        />
+      ) : hashMapProductsFilter ? (
+        brands?.map((brand, index) => {
+          if (hashMapProductsFilter?.get(brand)?.length) {
+            return (
+              <ProductContainer
+                key={index}
+                productName={brand}
+                productList={hashMapProductsFilter.get(brand)}
+                loading={loading}
+              />
+            );
+          }
+        })
       ) : (
         brands?.map((brand, index) => {
           return (

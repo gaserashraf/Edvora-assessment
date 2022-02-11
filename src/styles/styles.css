@@ -180,6 +180,9 @@ body code {
   text-align: left;
   color: #a5a5a5;
 }
+.home .filter-container .clear {
+  cursor: pointer;
+}
 .home .filter-container .filter-line {
   margin: 20px 0;
   position: absolute;
@@ -198,6 +201,8 @@ body code {
   padding: 8px 11px;
   margin-top: 12px;
   position: relative;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   cursor: pointer;
 }
 .home .filter-container .filter-dropdown i {
@@ -228,6 +233,12 @@ body code {
 }
 .home .filter-container .filter-dropdown .menu ul li:hover {
   background-color: #434343;
+}
+
+@media screen and (max-width: 960px) {
+  .filter-container {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

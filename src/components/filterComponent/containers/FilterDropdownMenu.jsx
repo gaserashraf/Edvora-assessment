@@ -1,10 +1,10 @@
 import React from "react";
 
 const FilterDropdownMenu = (props) => {
-  let { Arr, setActiveProduct } = props;
+  let { Arr, setActive } = props;
   const handleClick = (e) => {
-    if (setActiveProduct) {
-      setActiveProduct(e.target.textContent);
+    if (setActive) {
+      setActive(e.target.textContent);
     }
   };
   return (
