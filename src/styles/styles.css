@@ -33,6 +33,10 @@ body code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.Button {
+  color: white;
+}
+
 .home {
   padding: 50px 50px;
 }
@@ -161,7 +165,8 @@ body code {
   right: 15px;
   top: 139px;
 }
-.home .filter-container {
+
+.filter-container {
   height: 275px;
   width: 228px;
   background-color: #131313;
@@ -169,7 +174,7 @@ body code {
   margin-right: 30px;
   padding: 25px 28px;
 }
-.home .filter-container .filter-header {
+.filter-container .filter-header {
   height: 24px;
   width: 49px;
   font-size: 20px;
@@ -180,20 +185,20 @@ body code {
   text-align: left;
   color: #a5a5a5;
 }
-.home .filter-container .clear {
+.filter-container .clear {
   cursor: pointer;
 }
-.home .filter-container .filter-line {
+.filter-container .filter-line {
   margin: 20px 0;
   position: absolute;
   width: 158px;
   height: 0px;
   border: 1px solid #cbcbcb;
 }
-.home .filter-container .filter-3 {
+.filter-container .filter-3 {
   margin-top: 50px;
 }
-.home .filter-container .filter-dropdown {
+.filter-container .filter-dropdown {
   height: 37.5020141602px;
   width: 168.4499969482px;
   border-radius: 4.68775177px;
@@ -205,16 +210,16 @@ body code {
   white-space: nowrap;
   cursor: pointer;
 }
-.home .filter-container .filter-dropdown i {
+.filter-container .filter-dropdown i {
   color: #a5a5a5;
 }
-.home .filter-container .filter-dropdown .menu {
+.filter-container .filter-dropdown .menu {
   position: absolute;
   top: 38px;
   left: 0;
   z-index: 100;
 }
-.home .filter-container .filter-dropdown .menu ul {
+.filter-container .filter-dropdown .menu ul {
   list-style: none;
   background-color: #131313;
   width: 168.4499969482px;
@@ -224,20 +229,103 @@ body code {
   max-height: 250px;
   overflow-y: scroll;
 }
-.home .filter-container .filter-dropdown .menu ul::-webkit-scrollbar {
+.filter-container .filter-dropdown .menu ul::-webkit-scrollbar {
   display: none;
 }
-.home .filter-container .filter-dropdown .menu ul li {
+.filter-container .filter-dropdown .menu ul li {
   padding: 15px;
   border-bottom: 1px solid #292929;
 }
-.home .filter-container .filter-dropdown .menu ul li:hover {
+.filter-container .filter-dropdown .menu ul li:hover {
   background-color: #434343;
 }
 
+.dia {
+  display: none;
+}
+
 @media screen and (max-width: 960px) {
-  .filter-container {
+  .dia {
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    position: absolute;
+    top: 7px;
+    right: 13px;
+  }
+  .dia button {
+    height: 24px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #a5a5a5;
+    text-transform: capitalize;
+  }
+
+  .filter-container .hide {
     display: none;
+  }
+
+  .filter-container {
+    height: 500px;
+    width: 300px;
+    margin: 0;
+  }
+  .filter-container .filter-line {
+    width: 82%;
+  }
+  .filter-container .filter-dropdown {
+    width: auto;
+  }
+  .filter-container .filter-dropdown .menu {
+    width: 100%;
+  }
+  .filter-container .filter-dropdown .menu ul {
+    width: 100%;
+  }
+
+  .home {
+    padding: 30px 15px;
+  }
+  .home .fil {
+    display: none;
+  }
+  .home .cont {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .home .products-home .product-container {
+    margin-bottom: 35px;
+  }
+  .home .products-home .product-container .product-list {
+    height: 550px;
+    width: 100%;
+    flex-direction: column;
+  }
+  .home .products-home .product-container .product-list .product-item {
+    min-width: 302px;
+    min-height: 162px;
+    max-width: 302px;
+    max-height: 162px;
+    padding: 17px;
+    margin-bottom: 15px;
+  }
+  .home .products-home .product-container .product-list .product-item:first-of-type {
+    margin-top: 20px;
+  }
+  .home .products-home .product-container .product-line {
+    width: 100%;
+  }
+  .home .products-home .product-container .arrow {
+    bottom: -43px;
+    right: 50%;
+    top: auto;
+    transform: rotate(90deg);
   }
 }
 
