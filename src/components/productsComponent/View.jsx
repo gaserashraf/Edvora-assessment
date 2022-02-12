@@ -2,7 +2,9 @@ import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../contexts/productContext";
 import ProductContainer from "./containers/ProductContainer";
 import Loader from "./containers/Loader";
-const Products = () => {
+import PropTypes from "prop-types";
+
+const Products = (props) => {
   const {
     products,
     getProductsServices,
@@ -15,6 +17,7 @@ const Products = () => {
   useEffect(() => {
     getProductsServices();
   }, []);
+  let {dark}=props
   //console.log(brands);
 
   return (
@@ -32,6 +35,7 @@ const Products = () => {
                 productName={brand}
                 productList={hashMapProductsFilter.get(brand)}
                 loading={loading}
+                dark={dark}
               />
             );
           }
@@ -44,6 +48,7 @@ const Products = () => {
               productName={brand}
               productList={hashMapProducts.get(brand)}
               loading={loading}
+              dark={dark}
             />
           );
         })
@@ -51,5 +56,7 @@ const Products = () => {
     </div>
   );
 };
-
+Products.propTypes = {
+  dark: PropTypes.bool,
+};
 export default Products;

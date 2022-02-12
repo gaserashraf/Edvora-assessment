@@ -4,7 +4,7 @@ import ClickAwayListener from "@mui/material/ClickAwayListener";
 import PropTypes from "prop-types";
 
 const FilterDropdown = (props) => {
-  let { constName, dropdownList, setActive,onClose } = props;
+  let { constName, dropdownList, setActive, onClose } = props;
   const [open, setOpen] = useState(false);
   const handleClickAway = () => {
     setOpen(false);
@@ -17,21 +17,25 @@ const FilterDropdown = (props) => {
           setOpen(!open);
         }}
       >
-        {constName}
+        <div className="const">{constName}</div>
         <i class="fas fa-caret-down"></i>
         {open && (
           <div className="menu">
-            <FilterDropdownMenu onClose={onClose} Arr={dropdownList} setActive={setActive} />
+            <FilterDropdownMenu
+              onClose={onClose}
+              Arr={dropdownList}
+              setActive={setActive}
+            />
           </div>
         )}
       </div>
     </ClickAwayListener>
   );
 };
-FilterDropdownMenu.propTypes={
+FilterDropdownMenu.propTypes = {
   dropdownList: PropTypes.array,
   setActive: PropTypes.func,
   onClose: PropTypes.func,
-  constName:PropTypes.string
-}
+  constName: PropTypes.string,
+};
 export default FilterDropdown;

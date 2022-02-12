@@ -17,7 +17,7 @@ const FilterContainer = (props) => {
     filterCity,
     filterBrands,
   } = useContext(ProductContext);
-  let { hide ,onClose} = props;
+  let { hide, onClose, dark } = props;
   const setActiveProduct = (brandName) => {
     setBrandFilterProducts(brandName);
   };
@@ -31,7 +31,7 @@ const FilterContainer = (props) => {
     clearBrandFilterProducts();
   };
   return (
-    <div className={`filter-container ${hide ? "hide" : ""}`}>
+    <div className={`filter-container ${hide ? "hide" : ""} ${dark ? "dark" : "normal"}`}>
       <div className="row">
         <div className="col-6">
           <h2 className="filter-header">Filter</h2>
@@ -69,5 +69,6 @@ const FilterContainer = (props) => {
 FilterContainer.propTypes = {
   hide: PropTypes.bool,
   onClose: PropTypes.func,
+  dark: PropTypes.bool,
 };
 export default FilterContainer;

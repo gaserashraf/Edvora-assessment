@@ -4,7 +4,7 @@ import FilterContainer from "../View";
 import PropTypes from "prop-types";
 
 const FilterPopup = (props) => {
-  const { onClose, open } = props;
+  const { onClose, open,dark } = props;
   const handleClose = () => {
     onClose();
   };
@@ -19,12 +19,13 @@ const FilterPopup = (props) => {
         },
       }}
     >
-      <FilterContainer onClose={onClose} hide={false} />
+      <FilterContainer dark={dark} onClose={onClose} hide={false} />
     </Dialog>
   );
 };
 FilterPopup.propTypes = {
   onClose: PropTypes.func,
   open: PropTypes.bool,
+  dark:PropTypes.bool
 };
 export default FilterPopup;

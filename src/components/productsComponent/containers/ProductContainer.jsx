@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import ProductItem from "./ProductItem";
 import arrow from "../../../assets/arrow.png";
 const ProductContainer = (props) => {
-  let { productName, productList, loading } = props;
+  let { productName, productList, loading,dark } = props;
   // console.log(loading);
   return (
     <div className="product-container">
@@ -14,7 +14,7 @@ const ProductContainer = (props) => {
           <div
             class="alert d-flex align-items-center w-100"
             role="alert"
-            style={{fontSize:"27px"}}
+            style={{ fontSize: "27px" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -44,13 +44,14 @@ const ProductContainer = (props) => {
               date={product?.date}
               time={product?.time}
               image={product?.image}
+              dark={dark}
             />
           );
         })}
       </div>
       <div className="arrow">
         <div className="arrow-img">
-          <img src={arrow}></img>
+          <i class="fas fa-chevron-right"></i>
         </div>
       </div>
     </div>
@@ -60,5 +61,7 @@ ProductContainer.propTypes = {
   productName: PropTypes.string,
   productList: PropTypes.array,
   loading: PropTypes.bool,
+  dark: PropTypes.bool,
+
 };
 export default ProductContainer;

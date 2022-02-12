@@ -12,6 +12,7 @@ const ProductItem = (props) => {
     date,
     time,
     image,
+    dark,
   } = props;
   return (
     <div className="product-item">
@@ -20,14 +21,20 @@ const ProductItem = (props) => {
           <div className="img">
             <img src={image}></img>
           </div>
-          <h3 className="text-sec adress">{state+"/"+city}</h3>
+          <h3 className="text-sec adress">{state + "/" + city}</h3>
         </div>
         <div className="col-6 box2">
           <h3 className="text-sec p-name">{productName}</h3>
           <h3 className="text-sec b-name">{brandName}</h3>
           <h3 className="text-sec price">$ {price}</h3>
           <h3 className="text-sec date">
-            date: <Moment style={{color:"#ffffff80"}} format="YYYY/MM/DD">{date}</Moment>
+            date:{" "}
+            <Moment
+              style={{ color: dark ? "#ffffff80" : "#000" }}
+              format="YYYY/MM/DD"
+            >
+              {date}
+            </Moment>
           </h3>
         </div>
       </div>
@@ -47,5 +54,6 @@ ProductItem.propTypes = {
   date: PropTypes.string,
   time: PropTypes.string,
   image: PropTypes.string,
+  dark: PropTypes.bool,
 };
 export default ProductItem;
